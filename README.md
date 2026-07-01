@@ -1,3 +1,7 @@
+<div align="center">
+ <img src="asset/PreviaRecomendadorFilmes.gif">
+</div>
+
 <h1 align="center">🎬 Sistema de Recomendação de Filmes</h1> 
  
 Projeto acadêmico desenvolvido para a disciplina de **Matemática Computacional Aplicada**, com o objetivo de demonstrar a aplicabilidade prática de estruturas matemáticas discretas na construção de um sistema de recomendação de filmes.
