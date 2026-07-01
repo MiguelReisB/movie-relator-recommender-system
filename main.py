@@ -1,7 +1,7 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 import interface
-import matriz
+
 filmes = [
     {
         "nome": "A Origem",
@@ -38,5 +38,3 @@ filmes = [
 
 if __name__ == "__main__":
     interface.criar_interface(filmes)
-    
-
