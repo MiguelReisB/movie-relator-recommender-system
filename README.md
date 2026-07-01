@@ -24,14 +24,14 @@ O sistema modela as relações entre filmes a partir de três critérios:
 
 # Como executar o projeto
 
-1. Para clonar o repositório na própria máquina:
+<b>1.</b> Para clonar o repositório na própria máquina:
 
 ```bash
 git clone https://github.com/MiguelReisB/movie-relator-recommender-system.git
 cd movie-relator-recommender-system
 ```
 
-2. Criar e ativar um ambiente virtual:
+<b>2.</b> Criar e ativar um ambiente virtual:
 
 **Linux/macOS:**
 
@@ -47,14 +47,22 @@ python -m venv .venv
 .venv\Scripts\activate
 ```
 
-3. Instalar as dependências do projeto direto do arquivo .txt:
+<b>3.</b> Instalar as dependências do projeto direto do arquivo .txt, sem a necessidade de baixar no seu próprio computador:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-4. E enfim, executar a aplicação:
+<b>4.</b> E enfim, executar a aplicação:
 
 ```bash
 python main.py
 ```
+
+<b>5.</b> Ao selecionar alguma opção para visualizar determinada relação entre os filmes, aparecerá primeiro a matriz de adjacência, em seguida, ao fechar a janela no 'x', aparecerá o grafo referente àquela mesma opção selecionada anteriormente. Logo após, fechando novamente no 'x', o sistema retorna automaticamente para a primeira tela. Para sair e encerrar, basta clicar em 'sair' ou novamente no 'x'.
+
+<b>Obs:</b> Para encerrar manualmente a máquina virtual no terminal, execute: 
+```bash
+deactivate
+```
+Se preferir, basta apenas fechar o terminal que a máquina virtual será encerrada automaticamente.
