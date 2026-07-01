@@ -30,27 +30,51 @@ def relacionar_duracao(grafo, filmes):
                 grafo.add_edge(filmes[i]["nome"], filmes[j]["nome"])
 
 def mostrar_grafo(grafo):
-    plt.figure(figsize=(13, 8))
-    
-    pos = nx.spring_layout(grafo, k=1.0, seed=42)
+    plt.figure(figsize=(10.1, 7.3))
 
+    rotulos = {filme: str(i + 1) for i, filme in enumerate(grafo.nodes())}
+
+    legenda = "\n".join([f"{i + 1}: {filme}" for i, filme in enumerate(grafo.nodes())])
+    plt.text(
+        0.02,
+        0.98,
+        legenda,
+        transform=plt.gca().transAxes,
+        fontsize=8,
+        verticalalignment='top',
+        horizontalalignment='left',
+        bbox=dict(
+            facecolor='white',
+            edgecolor='black',
+            boxstyle='round,pad=0.5'
+            )
+    ) 
     
+    pos = nx.spring_layout(grafo, k=10, seed=11)
+
     nx.draw_networkx_nodes(
-        grafo, pos,
+        grafo, 
+        pos,
         node_color='lightgray',
-        node_size=2100
+        node_size=1700
     )
 
+
     nx.draw_networkx_edges(
-        grafo, pos,
+        grafo, 
+        pos,
         width=2
     )
 
+
     nx.draw_networkx_labels(
-        grafo, pos,
-        font_size=9,
+        grafo, 
+        pos,
+        labels=rotulos,
+        font_size=6,
         font_weight='bold'
     )
 
     plt.axis('off')
+    plt.title("Relação entre os Filmes", fontsize=14, pad=15)
     plt.show()
