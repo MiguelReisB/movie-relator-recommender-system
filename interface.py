@@ -1,5 +1,4 @@
 import tkinter as tk
-from tkinter import messagebox
 import networkx as nx
 import matplotlib.pyplot as plt
 
@@ -37,28 +36,98 @@ def duracao(filmes):
     grafos.clear()
     matriz.matrix_duracao(filmes)
     
-# Interface
 def criar_interface(filmes):
     janela = tk.Tk()
-    janela.title("Sistema de Filmes")
-    janela.geometry("400x300")
+    janela.title("Sistema de recomendação de Filmes")
+    janela.geometry("500x420")
+    janela.config(bg="#1e1e2f")
 
-    titulo = tk.Label(janela, text="Sistema de Relação de Filmes", font=("Arial", 14))
-    titulo.pack(pady=10)
+    titulo = tk.Label(
+        janela,
+        text="Sistema de recomendação de Filmes",
+        font=("Arial", 16),
+        bg="#1e1e2f",
+        fg="white"
+        )
+    titulo.pack(pady=15)
 
-    btn1 = tk.Button(janela, text="Relação Geral", width=25, command=lambda: geral(filmes))
-    btn1.pack(pady=5)
+    frame_botoes = tk.Frame(
+        janela,
+        bg="#303058",
+        width=300,
+        height=200
+        )
+    frame_botoes.pack(pady=10)
+    frame_botoes.pack_propagate(False)
 
-    btn2 = tk.Button(janela, text="Por Gênero", width=25, command=lambda: genero(filmes))
-    btn2.pack(pady=5)
+    espaco_topo = tk.Frame(
+        frame_botoes,
+        height=30,
+        bg="#303058"
+        )
+    espaco_topo.pack()
+    
+    btn1 = tk.Button(
+        frame_botoes,
+        text="Relação Geral",
+        width=30,
+        command=lambda: geral(filmes),
+        bg="#4a90e2",
+        fg="white",
+        bd=0
+        )
+    btn1.pack(pady=6)
 
-    btn3 = tk.Button(janela, text="Por Atores", width=25, command=lambda: atores(filmes))
-    btn3.pack(pady=5)
+    btn2 = tk.Button(
+        frame_botoes,
+        text="Por Gênero",
+        width=30,
+        command=lambda: genero(filmes),
+        bg="#4a90e2",
+        fg="white",
+        bd=0
+        )
+    btn2.pack(pady=6)
 
-    btn4 = tk.Button(janela, text="Por Duração", width=25, command=lambda: duracao(filmes))
-    btn4.pack(pady=5)
+    btn3 = tk.Button(
+        frame_botoes,
+        text="Por Atores",
+        width=30,
+        command=lambda: atores(filmes),
+        bg="#4a90e2",
+        fg="white",
+        bd=0
+        )
+    btn3.pack(pady=6)
 
-    btn_sair = tk.Button(janela, text="Sair", width=25, command=janela.quit)
-    btn_sair.pack(pady=10)
+    btn4 = tk.Button(
+        frame_botoes,
+        text="Por Duração",
+        width=30,
+        command=lambda: duracao(filmes),
+        bg="#4a90e2",
+        fg="white",
+        bd=0
+        )
+    btn4.pack(pady=6)
+
+    espaco_baixo = tk.Frame(
+        frame_botoes,
+        height=20,
+        bg="#303058"
+        )
+    espaco_baixo.pack(side="bottom")
+
+
+    btn_sair = tk.Button(
+        janela,
+        text="Sair",
+        width=10,
+        command=janela.quit,
+        bg="#e74c3c",
+        fg="white",
+        bd=0
+        )
+    btn_sair.pack(pady=30)
 
     janela.mainloop()
