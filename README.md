@@ -70,3 +70,8 @@ python main.py
 deactivate
 ```
 Se preferir, basta apenas fechar o terminal que a máquina virtual será encerrada automaticamente.
+
+## Para melhor visualização:
+
+<p>Busque abrir cada matriz e grafo em tela cheia</p>
+
