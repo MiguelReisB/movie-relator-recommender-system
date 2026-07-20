@@ -71,7 +71,8 @@ deactivate
 ```
 Se preferir, basta apenas fechar o terminal que a máquina virtual será encerrada automaticamente.
 
-## Para melhor visualização:
+## Para melhor visualização...
 
-<p>Busque abrir cada matriz e grafo em tela cheia</p>
-
+<p>Busque abrir cada matriz e grafo em tela cheia:</p>
+<img src="asset/PreviewMatriz.png" alt="Prévia em tela cheia da matriz" align="center">
+<img src="asset/PreviewGrafo.png" alt="Prévia em tela cheia do grafo" align="center">
