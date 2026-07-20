@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 def create_matrix(filmes):
     matrix = [[0 for _ in filmes] for _ in filmes]
     return matrix
+    # faz uma matriz quadrada de zeros com o tamanho da lista de filmes, para ser usada nas funções abaixo
 
 def matrix_genero(filmes):
     matrix = create_matrix(filmes)
@@ -22,7 +23,7 @@ def matrix_atores(filmes):
                 matrix[i][j] = 1
                 matrix[j][i] = 1
     return matrix
-
+# tem que retornar uma matrix com as relações entre os atores principais
 def matrix_duracao(filmes):
     matrix = create_matrix(filmes)
     for i in range(len(filmes)):
@@ -31,7 +32,7 @@ def matrix_duracao(filmes):
                 matrix[i][j] = 1
                 matrix[j][i] = 1
     return matrix
-
+# tem que retornar uma matrix com as relações entre a duração dos filmes
 def matriz_geral_direta(filmes):
     n = len(filmes)
     matriz = [[0 for _ in filmes] for _ in filmes]
@@ -56,7 +57,7 @@ def matriz_geral_direta(filmes):
             matriz[j][i] = peso
 
     return matriz
-
+# aqui tem que retornar uma matriz com as relações entre os filmes, considerando gênero, atores e duração
 def draw_matrix(filmes1, matrix):
 
     filmes = [filme["nome"] for filme in filmes1]
@@ -64,26 +65,26 @@ def draw_matrix(filmes1, matrix):
     # Matriz simétrica baseada na regra dos 30 minutos
     matriz = matrix
 
-    # 2. Criando o Quadro da Matriz
     fig, ax = plt.subplots(figsize=(8, 6))
-    ax.set_title("Matriz de Adjacência dos Filmes", fontsize=14, pad=15)
-
-    # Desenhando a matriz (cmap='Blues' para tons de azul)
+    ax.set_title("Matriz de Adjacência dos Filmes", fontsize=17, pad=18)
+# aqui cria a figura e o eixo do gráfico, define o título e o tamanho da fonte
+    
     cax = ax.imshow(matriz, cmap='Blues', interpolation='none')
-
-    # 3. Configurando os nomes nos eixos X e Y
+# desenhando a matriz (cmap='Blues' para tons de azul)
+    
     ax.set_xticks(range(len(filmes)))
     ax.set_yticks(range(len(filmes)))
-    ax.set_xticklabels(filmes, rotation=45, ha="right", fontsize=10)
-    ax.set_yticklabels(filmes, fontsize=10)
-
-    # 4. Escrevendo os números (0 e 1) dentro de cada quadradinho
+    ax.set_xticklabels(filmes, rotation=45, ha="right", fontsize=12)
+    ax.set_yticklabels(filmes, fontsize=12)
+# configurando os ticks e labels dos eixos x e y, com rotação de 45 graus para os nomes dos filmes no eixo x, alinhamento à direita e tamanho de fonte 15, e tamanho de fonte 10 para o eixo y
+    
     for i in range(len(filmes)):
         for j in range(len(filmes)):
             # Pinta de branco se for 1 (fundo escuro) e de preto se for 0 (fundo claro)
             cor = "white" if matriz[i][j] == 1 else "black"
-            ax.text(j, i, str(matriz[i][j]), ha="center", va="center", color=cor, fontweight='bold')
-
-    # Ajusta o layout para não cortar os nomes e exibe
+            ax.text(j, i, str(matriz[i][j]), ha="center", va="center", color=cor, fontsize=12, fontweight='bold')
+# adicionando os valores da matriz como texto dentro de cada célula, centralizados, com cor branca para 1 e preta para 0, e peso de fonte em negrito
+    
     plt.tight_layout()
     plt.show()
+    # Ajusta o layout para não cortar os nomes e exibe
