@@ -35,7 +35,7 @@ def duracao(filmes):
     grafos.mostrar_grafo(grafo)
     grafos.clear()
     matriz.matrix_duracao(filmes)
-    
+    # funções para gerar as matrizes e os grafos, chamando as funções do arquivo matriz.py e grafos.py, respectivamente
 def criar_interface(filmes):
     janela = tk.Tk()
     janela.title("Sistema de recomendação de Filmes")
@@ -131,3 +131,4 @@ def criar_interface(filmes):
     btn_sair.pack(pady=30)
 
     janela.mainloop()
+# aqui cria a interface gráfica com os botões para cada tipo de relação, chamando as funções correspondentes ao clicar nos botões, e um botão para sair do programa
